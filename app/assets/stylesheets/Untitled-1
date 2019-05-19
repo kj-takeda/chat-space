@@ -1,0 +1,57 @@
+ .edit{
+    border:solid;
+    float:right;
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  %div.right
+    %a.edit edit
+    %div.team team
+    %div.member member 
+   
+  %div.message
+    %p.user
+    %p.main
+
+
+.right{
+  height:100px;
+  width:calc(100% - 300px);
+  border:solid;
+  float:right;
+    
+  .edit{
+    border:solid;
+    float:right;
+    height:40px;
+    line-height: 30px;
+    padding-left:20px;
+    padding-right:20px;
+    margin-top:28px;
+    margin-right:40px;
+    color:blue;
+  }
+  .team{
+    margin-top:35px;
+    margin-bottom:15px;
+    color:#333333;
+    font-size:20px;
+  }
+  .member{
+    color:#999999;
+    font-size:12px;
+  }
+}
+
+
+  .message{
+border:solid;
+background-color: blue;
+height:500px;
+width:100%;
+float:right;
+
+}
+}
+
