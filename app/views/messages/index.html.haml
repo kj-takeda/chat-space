@@ -1,15 +1,17 @@
-%div.macro
-  %div.left
-    %p.name name
-    %p.group グループ名
-    %p.team チーム名
-  %div.right
-    %div.sum
-      %a.edit edit
-      %p.text1 11
-      %p.text2 22
-    %div.tweet tweet
-    %div.submit sent sent
-    
+
+.wrapper
+= render 'devise/shared/side_bar'
+
+%div.right
+  %div.team
+    = link_to 'Edit',edit_group_path(current_user),class: "btn"
+  %div.message
+  %div.form
+  = form_for [@group, @message] do |f|
+    = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+    = fa_icon 'picture-o', class: 'icon'
+    = f.file_field :image, class: 'hidden'
+    = f.submit 'Send', class: 'form__submit'
+
 
   
