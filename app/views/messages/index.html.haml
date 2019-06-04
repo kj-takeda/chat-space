@@ -1,0 +1,37 @@
+
+%div.top-bar  グループ作成しました
+
+%div.chat-side
+  %div.side-header
+    %div.side-header-box
+      %p.side-header-box__name name
+      %i.fa.fa-pencil-square-o.side-header-box__new
+      %i.fa.fa-pencil-square-o.side-header-box__edit
+
+
+  %div.groups
+    %div.group
+      %h3.group__name チーム1
+      %p.group__message まだメッセージがありません
+
+%div.right
+  %div.first
+    %div.team
+      %div.team__name abc
+      %div.team__member xxx
+    %p.first__edit Edit
+    
+   
+  %div.second
+    %div.box
+      %div.box__user abc
+      %div.box__text xxx
+      %div.box__member sss
+
+  %form.third
+    %input{:type => "submit", :value => "send", :class => "third__bottom"}
+    %div.third__space
+    %label.third__icon
+      %img{:src => "https://www.nishishi.com/css/images/camera-orange-rev.png",:width => "32",:height => "26",:alt => "＋画像"}
+      %input{:type => "file",:class => "filesend"}
+    %p.third__text aaaaaaa
