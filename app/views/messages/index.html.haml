@@ -1,37 +1,27 @@
 
-.top-bar  グループ作成しました
+.side
+  = render 'shared/side_bar'
 
-.chat-side
-  .side-header
-    .side-header-box
-      %p.side-header-box__name name
-      %i.fa.fa-pencil-square-o.side-header-box__new
-      %i.fa.fa-pencil-square-o.side-header-box__edit
+.main
+  .header
+    .header__right
+      %right-header__button
+        = link_to "Edit", edit_group_path(@group)
+    .header__left
+      .left-header__title
+        = @group.name
+      %ul.left-header__members
+        - @group.users.each do |member|
+          = member.name
 
+  .main__body
+    = render @messages
 
-  .groups
-    .group
-      %h3.group__name チーム1
-      %p.group__message まだメッセージがありません
-
-.right
-  .first
-    .team
-      .team__name abc
-      .team__member xxx
-    %p.first__edit Edit
-    
-   
-  .second
-    .box
-      .box__user abc
-      .box__text xxx
-      .box__member sss
-
-  %form.third
-    %input{type: "submit", value: "send", class: "third__bottom"}
-    .third__space
-    %label.third__icon
-      %img{src: "https://www.nishishi.com/css/images/camera-orange-rev.png",width: "32",height: "26",alt: "＋画像"}
-      %input{type: "file",class: "filesend"}
-    %p.third__text aaaaaaa
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
