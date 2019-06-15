@@ -1,7 +1,14 @@
 
 $(function(){
   function buildHTML(data){
-    var html = 
+
+    if(data.image.present?){
+    var img = <img src="${ data.image }"></img>
+    }else{
+    var img = ""
+    }
+    end
+
 `<div class="message">
   <div class="upper-message">
     <div class="upper-message__user-name">
@@ -20,10 +27,13 @@ $(function(){
   </div>
 
   <div class="image">
-  <p class="image">
-  ${ data.image }
-  </p>
-</div>
+    <p class="image">
+    ${img}
+    </p>
+  </div>
+ 
+    <div></div>
+  }
 
 </div>`;
 
@@ -45,14 +55,13 @@ $("#new_message").on('submit', function(e){
     })  
     .done(function(data){
       var html = buildHTML(data);
-      console.log(html)
-      $('.messages').append(html)
-      $('.messages').animate({scrolltop: $('.messages').scrollHeight}, 'fast');
-      $('.form__message').reset[0]();
-      $('.form__submit').prop('disabled', false);　//ここで解除している
+      $('.main__body').append(html);
+      $('.main__body').animate({scrolltop: $('.main__body').scrollHeight}, 'fast');
+      $('.form')[0].reset();
+      $('.form__submit').prop('disabled', false); //ここで解除している
     })
     .fail(function(){
      alert('error')
-    })
+        })
 })
 })

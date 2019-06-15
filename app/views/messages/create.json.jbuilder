@@ -7,5 +7,5 @@ json.time    @message.created_at.to_s(:datatime)
 
 json.id    @message.id
 
-json.image @message.image
+json.image @message.image.url
 
