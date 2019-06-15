@@ -1,24 +1,14 @@
-@import "./reset";
-@import "./variable";
+
+@import "font-awesome";
+@import "config/colors";
+@import "reset";
+@import "user";
+@import "variable";
+@import "modules/chat";
+@import "modules/flash";
+@import "modules/group";
+@import "modules/side_bar";
+
+@import "config/colors";
 @import "messages/index";
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
-
-header{
-  background-color:#38AEF0;
-  text-align: center;
-  color:white;
-}
-
-*{
-  box-sizing: border-box
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
-  margin: 0;
-}
+@import "modules/group";
