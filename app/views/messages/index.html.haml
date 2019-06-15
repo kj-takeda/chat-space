@@ -1,4 +1,4 @@
-
+  
 .side
   = render 'shared/side_bar'
 
@@ -15,10 +15,10 @@
           = member.name
 
   .main__body
-    = render @messages
+    = render @message
 
   .form
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message] ,html:{class: "form"} do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
       .form__mask
         = f.label :image, class: 'form__mask__image' do
