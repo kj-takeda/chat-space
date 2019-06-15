@@ -46,9 +46,9 @@ $("#new_message").on('submit', function(e){
     .done(function(data){
       var html = buildHTML(data);
       console.log(html)
-      $('.messages').append(html);
-      $('.messages').animate({scrolltop: $('.messages').height()};
-      $('.form__message').val("");
+      $('.messages').append(html)
+      $('.messages').animate({scrolltop: $('.messages').scrollHeight}, 'fast');
+      $('.form__message').reset[0]();
       $('.form__submit').prop('disabled', false);　//ここで解除している
     })
     .fail(function(){
@@ -56,4 +56,3 @@ $("#new_message").on('submit', function(e){
     })
 })
 })
-
