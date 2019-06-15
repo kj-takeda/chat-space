@@ -1,0 +1,13 @@
+.message
+  .upper-message
+    .upper-message__user-name
+      = message.user.name
+    .upper-message__date
+      = message.created_at.to_s(:datatime)
+  .lower-message
+    %p.lower-message__content
+      = message.content
+  - if message.image.present?
+    .image
+      %p.image
+        = image_tag(message.image, size: 256)
