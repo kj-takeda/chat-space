@@ -2,12 +2,12 @@
 $(function(){
   function buildHTML(data){
 
-    if(data.image.present?){
-    var img = <img src="${ data.image }"></img>
+    if(data.image.present){
+    var img = `<img src=${ data.image }></img>`
     }else{
     var img = ""
     }
-    end
+
 
 `<div class="message">
   <div class="upper-message">
@@ -33,7 +33,6 @@ $(function(){
   </div>
  
     <div></div>
-  }
 
 </div>`;
 
