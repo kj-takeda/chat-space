@@ -7,19 +7,15 @@
 
           %li= message
 
-
   .chat-group-form__field
     .chat-group-form__field--left
       = f.label :グループ名, class: 'chat-group-form__label'
     .chat-group-form__field--right
       = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
    
-  
-  
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       = f.label :チャットメンバーを追加, class: 'chat-group-form__label user_search_field', placeholder: 'チャットメンバーを追加'
-
 
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
@@ -27,10 +23,6 @@
       
       #user-search-result
         %ul
-
-
-
-
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
@@ -42,9 +34,6 @@
           = f.hidden_field :user_ids, value: current_user.id, multiple: true
           %p.chat-group-user__name
             = current_user.name
-
-
-
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left

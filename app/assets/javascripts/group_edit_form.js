@@ -51,8 +51,8 @@ $(function() {
     })
     .fail(function() {
       alert('ユーザー検索に失敗しました');
-});
-});
+    });
+  });
 
 $("#user-search-result").on("click", ".user-search-add", function() {
   var id = $(this).data("user-id")
