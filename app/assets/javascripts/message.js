@@ -1,5 +1,5 @@
 $(function(){
-  var buildHTML = function(message) {
+  function buildHTML(message) {
     if (message.content && message.image.url) {
       //data-idが反映されるようにしている
       var html = '<div class="message" data-id=' + message.id + '>' +
