@@ -108,7 +108,7 @@ $("#new_message").on('submit', function(e){
         })
       })
         .fail(function() {
-          console.log('error');
+          alert('error');
       });
     };
     setInterval(reloadMessages, 5000);
