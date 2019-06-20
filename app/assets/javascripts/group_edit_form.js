@@ -1,3 +1,4 @@
+
 $(function() {
 
   var search_list = $("#user-search-result");
@@ -28,11 +29,10 @@ $(function() {
                 </div>`
     return html
   }
-
-  $("#user-search-field").on("keyup" , function() {
-    var input = $("#user-search-field").val();
-    console.log(input);
-
+  
+  $("#user-search-field,#user-search-result").on("keyup" , function() {
+    var input = $("#user-search-field, #user-search-result").val();
+    
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -40,7 +40,6 @@ $(function() {
       dataType: 'json'
     })
     .done(function(users) {
-      console.log(users);
       if (users.length !== 0) {
         users.forEach(function(users){
           appendUser(users);
