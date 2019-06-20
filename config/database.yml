@@ -1,9 +1,3 @@
-production:
-  <<: *default
-  database: ~~~（それぞれのアプリケーション名によって異なっています。こちらは編集しないでください）
-  username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
 
 # MySQL. Versions 5.0 and up are supported.
 #
@@ -57,5 +51,6 @@ test:
 production:
   <<: *default
   database: chat-space_production
-  username: chat-space
-  password: <%= ENV['CHAT-SPACE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
