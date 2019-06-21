@@ -2,7 +2,8 @@ $(function(){
   function buildHTML(message) {
     if (message.content && message.image.url) {
       //data-idが反映されるようにしている
-      var html = `<div class = "message" data-id= "${message.id}">
+      var html = 
+      `<div class = "message" data-id= "${message.id}">
         <div class = "upper-message">
           <div class= "upper-message__user-name">
             ${message.user_name}
@@ -11,33 +12,35 @@ $(function(){
           <div class="upper-message__date">
             ${message.created_at}
           </div>
-        
+        </div>
+
         <div class="lower-message">
           <p class="lower-message__content">
             ${message.content}
           </p>
           <img src= "${message.image.url}" class="lower-message__image" >
         </div>
-
       </div>`
 
     } else if (message.content) {
       //同様に、data-idが反映されるようにしている
-      var html = `<div class = "message" data-id= "${message.id}">
+      var html = 
+      `<div class = "message" data-id= "${message.id}">
         <div class = "upper-message">
           <div class= "upper-message__user-name">
             ${message.user_name}
           </div>
-
+        </div>
+        
           <div class="upper-message__date">
             ${message.created_at}
           </div>
         
-        <div class="lower-message">
-          <p class="lower-message__content">
-            ${message.content}
-          </p>
-        </div>
+          <div class="lower-message">
+            <p class="lower-message__content">
+              ${message.content}
+            </p>
+          </div>
       </div>`
 
     } else if (message.image.url) {
@@ -78,13 +81,14 @@ $("#new_message").on('submit', function(e){
     .done(function(data){
       var html = buildHTML(data);
       $('.main__body').append(html);
-      $('.main__body').animate({scrolltop: $('.main__body')[0].scrollHeight}, 'fast');
+      $('.main__body').animate({ scrollTop: $('.main__body')[0].scrollHeight }, 'fast');
 
       $('#new_message')[0].reset();
       $('.form__submit').prop('disabled', false); //ここで解除している
     })
     .fail(function(){
      alert('error')
+     $('.form__submit').prop('disabled', false); //ここで解除している
       })
     })
       

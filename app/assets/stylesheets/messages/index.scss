@@ -49,7 +49,7 @@
     
         .message {
           margin-bottom: 40px;
-    
+ 
           &__user {
             font-size: 16px;
             font-weight: bold;
@@ -67,7 +67,26 @@
           }
         }
       }
-    
+
+      .upper-message {
+        &__user-name{
+          color: #434a54;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__data{
+          color: #999999;
+          font-size: 10px;
+          margin-left: 10px;
+        }
+      }
+
+      .lower-message__content{
+        color: #434a54;
+    font-size: 14px;
+    margin-bottom: 10px;
+    }
+      
       .form {
         background-color:lightgray;
         box-sizing: border-box;
