@@ -112,6 +112,7 @@ $("#new_message").on('submit', function(e){
           messages.forEach(function(message) {
           var insertHTML = buildHTML(message);
           $('.main__body').append(insertHTML)
+          $('.main__body').animate({ scrollTop: $('.main__body')[0].scrollHeight }, 'fast');
         })
       })
         .fail(function() {
