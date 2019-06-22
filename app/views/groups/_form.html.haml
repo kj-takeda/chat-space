@@ -34,14 +34,15 @@
           = f.hidden_field :user_ids, value: current_user.id, multiple: true
           %p.chat-group-user__name
             = current_user.name
-
-      - @member.each do |solo|
-        #chat-group-user-22.chat-group-user.clearfix
-          = f.hidden_field :user_ids, value: solo.id, multiple: true
-          %p.chat-group-user__name
-            = solo.name
+            
+        - @member.each do |solo|
+          #chat-group-user-22.chat-group-user.clearfix
+            = f.hidden_field :user_ids, value: solo.id, multiple: true
+            %p.chat-group-user__name
+              = solo.name
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
       = f.submit class: 'chat-group-form__action-btn'
+      
