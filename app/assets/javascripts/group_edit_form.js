@@ -30,8 +30,9 @@ $(function() {
     return html
   }
   
-  $("#user-search-field,#user-search-result").on("keyup" , function() {
+  $("#user-search-field,#user-search-result").on("input" , function() {
     var input = $("#user-search-field, #user-search-result").val();
+    search_list.empty();
     
     $.ajax({
       type: 'GET',
