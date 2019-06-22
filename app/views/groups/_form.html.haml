@@ -35,11 +35,13 @@
           %p.chat-group-user__name
             = current_user.name
             
-        - @member.each do |solo|
+        - @group.users.where.not(id:current_user.id).each do |solo|
           #chat-group-user-22.chat-group-user.clearfix
             = f.hidden_field :user_ids, value: solo.id, multiple: true
             %p.chat-group-user__name
               = solo.name
+            %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn  
+              削除
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
