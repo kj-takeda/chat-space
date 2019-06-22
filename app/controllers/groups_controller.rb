@@ -20,7 +20,7 @@ class GroupsController < ApplicationController
 
   def edit
     @members = Group.new
-
+    @member = @group.users.where.not(id:current_user.id)
   end
 
   def update
